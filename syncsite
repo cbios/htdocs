@@ -1,0 +1,9 @@
+#!/bin/sh
+# $Id$
+#
+# Logs into SourceForge shell using SSH and updates C-BIOS web site from CVS.
+# If you have keypair authentication in place, everything is automatic.
+
+SFUSER=`sed -e "s/^.*:\([^:@]*\)@cvs.*\$/\\1/" CVS/Root`
+ssh $SFUSER@shell.sourceforge.net \
+	"cd /home/groups/c/cb/cbios/htdocs ; cvs update -d"
