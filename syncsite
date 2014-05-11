@@ -1,6 +1,4 @@
 #!/bin/sh
-# $Id$
-#
 # Logs into SourceForge shell using SSH and updates C-BIOS web site from CVS.
 # If you have keypair authentication in place, everything is automatic.
 
