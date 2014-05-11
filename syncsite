@@ -1,11 +1,5 @@
 #!/bin/sh
-# Logs into SourceForge shell using SSH and updates C-BIOS web site from CVS.
+# Syncs website to SourceForge.
 # If you have keypair authentication in place, everything is automatic.
 
-#SFUSER=`sed -e "s/^.*:\([^:@]*\)@cbios.cvs.*\$/\\1/" CVS/Root`
-#ssh $SFUSER@shell.sourceforge.net \
-#	"cd /home/groups/c/cb/cbios/htdocs ; cvs update -d"
-
-# This script is broken, because we moved to SVN and SF.net has different ways to
-# login now.
-echo "This script is broken. Please update it!"
+rsync --recursive --delete --delete-after --exclude ".git" . web.sf.net:cbios
